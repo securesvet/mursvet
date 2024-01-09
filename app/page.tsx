@@ -1,5 +1,8 @@
 import React from "react";
 import BlobImage from '@/components/BlobImage';
+import Underglow from "@/components/ui/Underglow";
+import { FaGithubAlt } from "react-icons/fa6";
+import OldSchoolButtons from "@/components/ui/OldSchoolButtons";
 
 export default function Home() {
     return (
@@ -14,15 +17,19 @@ export default function Home() {
                     </div>
                     <div className="bg-white relative w-[1fr] h-2/3 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
                 </div>
-                <div className="flex flex-col justify-center items-center">
+                <div className="flex flex-col justify-center items-center gap-5">
+                    <h1 className="text-2xl">My name is</h1>
                     <BlobImage href="/images/mads.jpg"
                                width="500px"
                                height="500px"
                     />
-                    <h1 className="text-2xl">My name is</h1>
-                    <h1 className="text-4xl">Sviatoslav Murzin</h1>
+                    <Underglow title={
+                            <h1 className="text-4xl">Sviatoslav Murzin</h1>
+                    }/>
+                    <Underglow title={<FaGithubAlt/>}/>
                 </div>
             </div>
+            <OldSchoolButtons/>
 
         </main>
     )
