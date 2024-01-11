@@ -22,6 +22,16 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "node_modules/canvas2image/canvas2image.js",
+    "node_modules/canvas2image/canvas2image.js",
+    "node_modules/canvas2image/canvas2image.js",
+    "node_modules/canvas2image/canvas2image.js",
+    "node_modules/canvas2image/canvas2image.js"
+  ],
   "exclude": ["node_modules"]
 }
