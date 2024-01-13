@@ -1,5 +1,5 @@
 import React, {ReactNode} from 'react';
-import styles from "./Underglow.module.css";
+import styles from "../css/Underglow.module.css";
 
 interface IUnderglow {
     props?: ReactNode;

@@ -1,40 +1,41 @@
-:root {
+.main {
     --backdrop: hsl(0 0% 60% / 0.12);
     --radius: 14;
     --border: 3;
     --backup-border: var(--backdrop);
     --size: 200;
+    box-sizing: border-box;
 }
 
-article:first-of-type {
+.card:first-of-type {
     --base: 80;
     --spread: 500;
     --outer: 1;
 }
-article:last-of-type {
+.card:last-of-type {
     --outer: 1;
     --base: 220;
     --spread: 200;
 }
 
-*,
-*:after,
-*:before {
-    box-sizing: border-box;
-}
-body {
-    display: grid;
-    place-items: center;
-    min-height: 100vh;
-    overflow: hidden;
-    background: hsl(0 0% 4%);
-}
+/**,*/
+/**:after,*/
+/**:before {*/
+/*    box-sizing: border-box;*/
+/*}*/
+/*body {*/
+/*    display: grid;*/
+/*    place-items: center;*/
+/*    min-height: 100vh;*/
+/*    overflow: hidden;*/
+/*    background: hsl(0 0% 4%);*/
+/*}*/
 
-.wrapper {
-    position: relative;
-}
+/*.wrapper {*/
+/*    position: relative;*/
+/*}*/
 
-article {
+.card {
     aspect-ratio: 3 / 4;
     border-radius: calc(var(--radius) * 1px);
     width: 260px;
@@ -48,7 +49,7 @@ article {
     /* For demo purposes. Means you get the effect on mobile */
     touch-action: none;
 }
-main {
+.main {
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
@@ -60,7 +61,7 @@ main {
 }
 
 /* Glow specific styles */
-[data-glow] {
+.data-glow {
     --border-size: calc(var(--border, 2) * 1px);
     --spotlight-size: calc(var(--size, 150) * 1px);
     --hue: calc(var(--base) + (var(--xp, 0) * var(--spread, 0)));
@@ -79,8 +80,8 @@ main {
     touch-action: none;
 }
 
-[data-glow]::before,
-[data-glow]::after {
+.data-glow::before,
+.data-glow::after {
     pointer-events: none;
     content: "";
     position: absolute;
@@ -99,7 +100,7 @@ main {
 }
 
 /* This is the emphasis light */
-[data-glow]::before {
+.data-glow::before {
     background-image: radial-gradient(
             calc(var(--spotlight-size) * 0.75) calc(var(--spotlight-size) * 0.75) at
             calc(var(--x, 0) * 1px)
@@ -109,7 +110,7 @@ main {
     filter: brightness(2);
 }
 /* This is the spotlight */
-[data-glow]::after {
+.data-glow::after {
     background-image: radial-gradient(
             calc(var(--spotlight-size) * 0.5) calc(var(--spotlight-size) * 0.5) at
             calc(var(--x, 0) * 1px)
@@ -117,45 +118,45 @@ main {
             hsl(0 100% 100% / var(--border-light-opacity, 1)), transparent 100%
     );
 }
-[data-glow] > [data-glow]:not(:is(a, button)) {
+.data-glow > .data-glow:not(:is(a, .button-card)) {
     position: absolute;
     inset: 0;
     will-change: filter;
     opacity: var(--outer, 1);
 }
-[data-glow] > [data-glow]:not(:is(a, button)) {
+.data-glow > .data-glow:not(:is(a, .button-card)) {
     border-radius: calc(var(--radius) * 1px);
     border-width: calc(var(--border-size) * 20);
     filter: blur(calc(var(--border-size) * 10));
     background: none;
     pointer-events: none;
 }
-[data-glow] > [data-glow]:not(:is(a, button))::before {
+.data-glow > .data-glow:not(:is(a, .button-card))::before {
     inset: -10px;
     border-width: 10px;
 }
-[data-glow] > [data-glow] {
+.data-glow > .data-glow {
     border: none;
 }
-[data-glow] :is(a, button) {
+.data-glow :is(a, .button-card) {
     border-radius: calc(var(--radius) * 1px);
     border: var(--border-size) solid transparent;
 }
-[data-glow] :is(a, button) [data-glow] {
+.data-glow :is(a, .button-card) .data-glow {
     background: none;
 }
-[data-glow] :is(a, button) [data-glow]::before {
+.data-glow :is(a, .button-card) .data-glow::before {
     inset: calc(var(--border-size) * -1);
     border-width: calc(var(--border-size) * 1);
 }
 
-article button {
+.card .button-card {
     padding: 0.75rem 2rem;
     align-self: end;
     color: hsl(0 0% 80%);
 }
 
-button[data-glow] span {
+.button-card.data-glow .span-card {
     font-weight: bold;
     background-image: radial-gradient(
             var(--spotlight-size) var(--spotlight-size) at
