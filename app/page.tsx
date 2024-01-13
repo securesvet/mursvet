@@ -3,6 +3,8 @@ import BlobImage from '@/components/BlobImage';
 import Underglow from "@/components/ui/Underglow";
 import { FaGithubAlt } from "react-icons/fa6";
 import OldSchoolButtons from "@/components/ui/OldSchoolButtons";
+import GlowingCards from "@/components/ui/GlowingCards";
+import GlowCards from "@/components/ui/GlowCards";
 
 export default function Home() {
     return (
@@ -18,7 +20,7 @@ export default function Home() {
                     <div className="bg-white relative w-[1fr] h-2/3 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
                 </div>
                 <div className="flex flex-col justify-center items-center gap-5">
-                    <h1 className="text-2xl">My name is</h1>
+                    <h1 className="text-2xl font-bold">My name is</h1>
                     <BlobImage href="/images/mads.jpg"
                                width="500px"
                                height="500px"
@@ -29,8 +31,9 @@ export default function Home() {
                     <Underglow title={<FaGithubAlt/>}/>
                 </div>
             </div>
-            <OldSchoolButtons/>
-
+            <div className="flex items-center justify-center bg-gray-900 min-w-full min-h-[800px]">
+                <GlowCards/>
+            </div>
         </main>
     )
 }

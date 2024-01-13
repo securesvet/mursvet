@@ -1,7 +1,7 @@
 'use client';
 
 import React, {useState} from 'react';
-import styles from "./OldSchoolButtons.module.css";
+import styles from "../css/OldSchoolButtons.module.css";
 const OldSchoolButtons = () => {
     const [activeIndex, setActiveIndex] = useState(null);
     const handleButtonClick = (index: any) => {
