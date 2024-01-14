@@ -16,6 +16,7 @@ const usePointerGlow = () => {
             document.documentElement.style.setProperty('--xp', xp)
             document.documentElement.style.setProperty('--y', y)
             document.documentElement.style.setProperty('--yp', yp)
+            //@ts-ignore
             setStatus({ x, y, xp, yp })
         }
         const syncTouch = (event: TouchEvent) => {
