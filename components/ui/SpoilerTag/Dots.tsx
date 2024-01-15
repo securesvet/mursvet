@@ -12,6 +12,8 @@ interface IDots {
 
 const Dots = ({width, height, children, density=500}: IDots) => {
     const defaultDensity = 500;
+
+    // Получаем массив рандомных координат
     const getRandomDots = (amount: number) => {
         const positions: ({ top: number; left: number; }[]) = [];
         for (let i = 0; i < amount; i++) {
@@ -22,6 +24,7 @@ const Dots = ({width, height, children, density=500}: IDots) => {
         return positions;
     }
 
+    // Получаем случайное отклонение, благодаря которому делаем анимацию точек
     const getRandomOffset = (position: number, offset: number) => {
         const currentMultiply = 20 * density / defaultDensity
         const randomInt = ~~(currentMultiply * Math.random());
@@ -30,7 +33,10 @@ const Dots = ({width, height, children, density=500}: IDots) => {
         return ((Math.random() < 0.5) ? (-randomInt) : (randomInt));
     }
 
+    // Объявляем изначальные позиции точек с помощью функции получения рандомных координат и useState().
     const [dotPositions, setDotPositions] = useState(getRandomDots(density));
+
+    // Вызываем когда меняется dotPositions, это происходит каждые 250 миллисекунд
     useEffect(() => {
             const moveDots = () => {
                 const newPositions = dotPositions.map((position) => ({
