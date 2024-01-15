@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../css/GlowingCards.module.css';
+
 const GlowingCards = () => {
     return (
         <div className={styles.table}>
