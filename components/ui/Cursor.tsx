@@ -14,9 +14,11 @@ const Cursor = () => {
 
     return (
         <div className="absolute z-[1000] w-10 h-10"
-            onMouseMove={(ev) => {handleMouseMove(ev)}}
-            style={{left: mousePosition.left, top: mousePosition.top}
-        }>
+             onMouseMove={(ev) => {
+                 handleMouseMove(ev)
+             }}
+             style={{left: mousePosition.left, top: mousePosition.top}
+             }>
             <h1>Yes</h1>
         </div>
     );
