@@ -3,14 +3,15 @@ import styles from "../css/Underglow.module.css";
 
 interface IUnderglow {
     props?: ReactNode;
-    title?: ReactNode;
+    className?: string;
+    children?: ReactNode;
 }
 
-const Underglow = ({title, ...props}: IUnderglow) => {
+const Underglow = ({children, className, ...props}: IUnderglow) => {
     return (
-        <div className={styles.bodyEmulation} {...props}>
-            <div className={styles.box}>
-                {title}
+        <div className={`${styles.bodyEmulation}`} {...props}>
+            <div className={`${styles.box} ${className}`}>
+                {children}
             </div>
         </div>
     );
