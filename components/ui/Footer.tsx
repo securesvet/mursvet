@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
-        <footer>
-            Footer
+        <footer className="text-white p-2">
+            © 2024 Mursvet, LLC
         </footer>
     );
 };
