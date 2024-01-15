@@ -1,30 +1,27 @@
 'use client';
 
-import React, {useEffect, useState} from 'react';
+import React, {HTMLAttributes, useEffect, useState} from 'react';
 import styles from './Dots.module.css';
-
 const Dots = () => {
-    const [dotPositions, setDotPositions] = useState([]);
+    const getRandomDots = (amount: number) => {
+        const positions: ({ top: number; left: number; }[]) = [];
+        for (let i = 0; i < amount; i++) {
+            const randomWidth = ~~(Math.random() * 1280);
+            const randomHeight = ~~(Math.random() * 250);
+            positions.push({top: randomHeight, left: randomWidth});
+        }
+        return positions;
+    }
+    const [dotPositions, setDotPositions] = useState(getRandomDots(500));
     useEffect(() => {
-            const positions: ({ top: number; left: number; }[]) = [];
-            const getRandomDots = (amount: number) => {
-                for (let i = 0; i < amount; i++) {
-                    const randomWidth = ~~(Math.random() * 1280);
-                    const randomHeight = ~~(Math.random() * 250);
-                    positions.push({top: randomHeight, left: randomWidth});
-                }
-            }
-            getRandomDots(100); // Change the number of dots as needed
-            setDotPositions(positions);
-
             const moveDots = () => {
                 const newPositions = dotPositions.map((position) => ({
-                    top: position.top + ~~(Math.random() * 2),
-                    left: position.left + ~~(Math.random() * 2),
+                    top: position.top + ((Math.random() > 0.5) ? 1 : -1),
+                    left: position.left + ((Math.random() > 0.5) ? 1 : -1),
                 }));
                 setDotPositions(newPositions);
             };
-            const intervalId = setInterval(moveDots, 200); // Update the positions every 100 milliseconds
+            const intervalId = setInterval(moveDots, 50); // Update the positions every 100 milliseconds
 
             return () => clearInterval(intervalId); // Clean up the interval when the component unmounts
         },

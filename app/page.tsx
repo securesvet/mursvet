@@ -19,7 +19,7 @@ export default function Home() {
                     <h1>Sviatoslav Murzin</h1>
                 </div>
                 <div className="relative w-[1280px] h-[250px]">
-                    <Dots/>
+                    <Dots width={1280} height={250}/>
                 </div>
             </div>
             {/*<div className="grid place-items-center bg-gray-500">*/}
