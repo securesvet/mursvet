@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-          <link rel="shortcut icon" href="/app/icon.png" />
+          <link rel="icon" href="/app/icon.png" type="image/x-icon" sizes="32x32"/>
       </Head>
       <body className={inter.className}>
         <Header/>
