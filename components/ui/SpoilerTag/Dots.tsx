@@ -26,7 +26,7 @@ const Dots = ({width, height, children, density = 500}: IDots) => {
 
     // Получаем случайное отклонение, благодаря которому делаем анимацию точек
     const getRandomOffset = (position: number, offset: number) => {
-        const currentMultiply = 25 * density / defaultDensity
+        const currentMultiply = 25 * density / defaultDensity;
         const randomInt = ~~(currentMultiply * Math.random());
         if (position < currentMultiply) return randomInt;
         if (position > offset - currentMultiply) return -randomInt;
