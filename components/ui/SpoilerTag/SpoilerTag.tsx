@@ -8,7 +8,7 @@ interface ISpoiler {
     hint?: Boolean;
 }
 
-const SpoilerTag = ({children, hint=false}: ISpoiler) => {
+const SpoilerTag = ({children, hint = false}: ISpoiler) => {
     const [spoilerOpacity, setSpoilerOpacity] = useState(false);
     const [dotsDimensions, setDotsDimensions] = useState({width: 0, height: 0});
     const h1Ref = useRef<HTMLDivElement>(null);
@@ -58,16 +58,16 @@ const SpoilerTag = ({children, hint=false}: ISpoiler) => {
                 setSpoilerOpacity(true);
             }}>
                 <Dots key={dotsKey} width={dotsDimensions.width} height={dotsDimensions.height}
-                      density={(dotsDimensions.width < 700) ? 200 : 500}>
+                      density={(dotsDimensions.width < 700) ? ((dotsDimensions.width < 500) ? 100 : 150) : 250}>
                     <div ref={h1Ref}
                          className={`${(spoilerOpacity) ? ("opacity-100") : ("hover:cursor-pointer opacity-0")} transition-opacity duration-500 whitespace-nowrap`}>
                         {children}
                     </div>
                 </Dots>
             </div>
-            {(hint) ? <h1 className={`text-sm md:text-lg lg:text-xl font-normal transition-opacity ${(spoilerOpacity) ? ("opacity-0") : ("opacity-100")} duration-1000`}>(click
-                here)</h1> : ""}
-
+            {(hint) ?
+                <h1 className={`text-sm md:text-lg lg:text-xl font-normal transition-opacity ${(spoilerOpacity) ? ("opacity-0") : ("opacity-100")} duration-1000`}>(click
+                    here)</h1> : ""}
         </>
     );
 };
