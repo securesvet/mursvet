@@ -52,14 +52,14 @@ const Dots = ({width, height, children, density=500}: IDots) => {
         [dotPositions]);
 
     return (
-        <div className="hover:cursor-pointer" onClick={() => {
+        <div onClick={() => {
             setDotPositions([]);
         }}>
             <div>
                 {children}
             </div>
             {dotPositions.map((el, index) => (
-                <div key={index}
+                <div key={`${index}`}
                      className={`${styles.dot} z-[100]`}
                      style={{top: el.top, left: el.left}}></div>
             ))}
