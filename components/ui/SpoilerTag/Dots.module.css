@@ -8,5 +8,5 @@
     left: 50%;
     transform: translate(-50%, -50%);
     transition-property: top, left, width;
-    transition: 500ms ease-in-out;
+    transition: 1000ms linear;
 }

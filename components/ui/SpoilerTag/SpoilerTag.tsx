@@ -57,8 +57,7 @@ const SpoilerTag = ({children, hint = false}: ISpoiler) => {
             <div className="relative" onClick={() => {
                 setSpoilerOpacity(true);
             }}>
-                <Dots key={dotsKey} width={dotsDimensions.width} height={dotsDimensions.height}
-                      density={(dotsDimensions.width < 700) ? ((dotsDimensions.width < 500) ? 100 : 150) : 250}>
+                <Dots key={dotsKey} width={dotsDimensions.width} height={dotsDimensions.height}>
                     <div ref={h1Ref}
                          className={`${(spoilerOpacity) ? ("opacity-100") : ("hover:cursor-pointer opacity-0")} transition-opacity duration-500 whitespace-nowrap`}>
                         {children}
