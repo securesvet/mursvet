@@ -10,7 +10,7 @@ interface IDots {
     children?: React.ReactNode;
 }
 
-const Dots = ({width, height, children, density = ~~(width / 5 + 30)}: IDots) => {
+const Dots = ({width, height, children, density = ~~(width * height / 450 + 50)}: IDots) => {
     const defaultDensity = 500;
 
     // Получаем массив рандомных координат
@@ -71,6 +71,7 @@ const Dots = ({width, height, children, density = ~~(width / 5 + 30)}: IDots) =>
                 {children}
             </div>
             {dotPositions.map((el, index) => {
+                // This one is blur and width optimizations mostly for mobiles
                 const random = Math.random();
                 const currentWidth = ~~(random * 5 + 2);
                 const currentBlur = ~~( 2.5 / currentWidth);
