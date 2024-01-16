@@ -10,7 +10,7 @@ interface IDots {
     children?: React.ReactNode;
 }
 
-const Dots = ({width, height, children, density=500}: IDots) => {
+const Dots = ({width, height, children, density = 500}: IDots) => {
     const defaultDensity = 500;
 
     // Получаем массив рандомных координат
@@ -26,7 +26,7 @@ const Dots = ({width, height, children, density=500}: IDots) => {
 
     // Получаем случайное отклонение, благодаря которому делаем анимацию точек
     const getRandomOffset = (position: number, offset: number) => {
-        const currentMultiply = 20 * density / defaultDensity
+        const currentMultiply = 25 * density / defaultDensity
         const randomInt = ~~(currentMultiply * Math.random());
         if (position < currentMultiply) return randomInt;
         if (position > offset - currentMultiply) return -randomInt;
@@ -36,14 +36,26 @@ const Dots = ({width, height, children, density=500}: IDots) => {
     // Объявляем изначальные позиции точек с помощью функции получения рандомных координат и useState().
     const [dotPositions, setDotPositions] = useState(getRandomDots(density));
 
+    const positionsToTranslate: React.SetStateAction<{ top: number; left: number; }[]>[] = [];
+    for (let i = 0; i < 10; i++) {
+        positionsToTranslate[i] = dotPositions.map((position) => ({
+            top: position.top + getRandomOffset(position.top, height),
+            left: position.left + getRandomOffset(position.left, width),
+        }));
+    }
+
+    let i = 0;
     // Вызываем когда меняется dotPositions, это происходит каждые 250 миллисекунд
     useEffect(() => {
             const moveDots = () => {
-                const newPositions = dotPositions.map((position) => ({
-                    top: position.top + getRandomOffset(position.top, height),
-                    left: position.left + getRandomOffset(position.left, width),
-                }));
-                setDotPositions(newPositions);
+                // Таким образом мы не проходим каждый раз по dotPositions сложность O(n), а всего лишь каждой точке
+                // задали 10 координат и она ходит всегда по ним.
+                i = (i + 1) % 10;
+                // const newPositions = dotPositions.map((position) => ({
+                //     top: position.top + getRandomOffset(position.top, height),
+                //     left: position.left + getRandomOffset(position.left, width),
+                // }));
+                setDotPositions(positionsToTranslate[i]);
             };
             const intervalId = setInterval(moveDots, 250); // Update the positions every 100 milliseconds
 
@@ -58,11 +70,15 @@ const Dots = ({width, height, children, density=500}: IDots) => {
             <div>
                 {children}
             </div>
-            {dotPositions.map((el, index) => (
-                <div key={`${index}`}
-                     className={`${styles.dot} z-[100]`}
-                     style={{top: el.top, left: el.left}}></div>
-            ))}
+            {dotPositions.map((el, index) => {
+                const random = Math.random();
+                const currentWidth = ~~(random * 5 + 2);
+                const currentBlur = ~~( 2.5 / currentWidth);
+                return (<div key={`${index}`}
+                             className={`${styles.dot} z-[100]`}
+                             style={{top: el.top, left: el.left, width: `${currentWidth}px`, filter: `blur(${currentBlur}px)`}}>
+                </div>)
+            })}
 
         </div>
     );
