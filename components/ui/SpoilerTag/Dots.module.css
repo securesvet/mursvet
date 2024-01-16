@@ -9,4 +9,5 @@
     transform: translate(-50%, -50%);
     transition-property: top, left, width;
     transition: 1000ms linear;
+    z-index: 0;
 }
