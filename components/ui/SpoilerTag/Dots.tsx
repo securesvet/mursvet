@@ -10,7 +10,7 @@ interface IDots {
     children?: React.ReactNode;
 }
 
-const Dots = ({width, height, children, density = ~~(width * height / 250 + 30)}: IDots) => {
+const Dots = ({width, height, children, density = ~~(width * height / 450 + 50)}: IDots) => {
     const defaultDensity = 500;
 
     // Получаем массив рандомных координат
