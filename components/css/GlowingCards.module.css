@@ -14,7 +14,7 @@
     width: 400px;
     height: 400px;
     float: left;
-    background: burlywood;
+    background: transparent;
     margin: 10px;
     border-radius: 5px;
     transition: 0.5s;
