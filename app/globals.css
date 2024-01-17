@@ -76,6 +76,10 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding: var(--scroll-pading, 5rem);
+  }
   body {
     @apply bg-background text-foreground;
   }
