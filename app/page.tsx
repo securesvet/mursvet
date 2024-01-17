@@ -2,6 +2,9 @@ import React from "react";
 import GradientText from "@/components/ui/GradientText";
 import {FaGithubAlt} from "react-icons/fa";
 import SpoilerTag from "@/components/ui/SpoilerTag/SpoilerTag";
+import ScrolledDownAchievement from "@/components/ui/Achievements/ScrolledDownAchievement";
+import Image from 'next/image'
+import Mads from '@/public/images/mads.jpg';
 
 export default function Home() {
 
@@ -24,7 +27,21 @@ export default function Home() {
                 {/*    <h1 className="text-9xl">Hello</h1>*/}
                 {/*</div>*/}
             </div>
-
+            <section id="projects">
+            <div className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-primary font-bold mb-10 text-center">
+                <h1>
+                    Projects of mine
+                </h1>
+                <div className="text-md sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-light min-h-full max-h-[calc(100vh-var(--global-nav-collective-height))]">
+                    <p className="text-md sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-light">are to be published...</p>
+                    <p>Just pretend they are here for a little while</p>
+                    <div className="grid place-items-center mt-10">
+                    <Image src={Mads} alt="That's not me"/>
+                    </div>
+                </div>
+            </div>
+            </section>
+            <ScrolledDownAchievement/>
         </main>
     )
 }
