@@ -3,10 +3,8 @@ import GradientText from "@/components/ui/GradientText";
 import {FaGithubAlt} from "react-icons/fa";
 import SpoilerTag from "@/components/ui/SpoilerTag/SpoilerTag";
 import Image from 'next/image'
-import Airpods from '@/public/images/airpods.svg';
-import Mads from '@/public/images/mads.jpg';
-import HyperCard from "@/components/ui/HyperCard";
 import ProjectCard from "@/components/ui/ProjectCard";
+import ScrolledDownAchievement from "@/components/ui/Achievements/ScrolledDownAchievement";
 
 export default function Home() {
 
@@ -45,6 +43,7 @@ export default function Home() {
                             <Image src={'/images/airpods.gif'} alt={'ava'} width={500} height={500} className={"rounded-[inherit]"}/>
                         </ProjectCard>
                         {/*<ProjectCard title={'Perlin noise'} description={'hello'}/>*/}
+                        <ScrolledDownAchievement/>
                     </div>
                 </div>
             </section>
