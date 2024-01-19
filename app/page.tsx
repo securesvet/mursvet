@@ -38,8 +38,8 @@ export default function Home() {
                     <div
                         className="grid place-items-center text-left gap-y-10">
                         <ProjectCard title={'Airpods Application'}
-                                     description={'React-native application mostly for linux users'}
-                                     link={'https://github.com/securesvet/bluetooth-linux-connect-automizer'} isDeveloping={true}>
+                                     description={'App for airpods animation when connected'}
+                                     link={'https://github.com/securesvet/aircon'} isDeveloping={true}>
                             <Image src={'/images/airpods.gif'} alt={'ava'} width={500} height={500} className={"rounded-[inherit]"}/>
                         </ProjectCard>
                         {/*<ProjectCard title={'Perlin noise'} description={'hello'}/>*/}
