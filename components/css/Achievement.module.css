@@ -1,5 +1,5 @@
 .achievement-container {
-    --achievement-scale: 1;
+    --achievement-scale: 0.8;
     position: fixed;
     right: 0;
     bottom: 0;
