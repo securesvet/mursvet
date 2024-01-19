@@ -16,8 +16,8 @@ const Header = () => {
                         MUR
                     </span>
                     <ul className="flex justify-end space-x-4">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="/#">Home</a></li>
+                        <li><a href="/#projects">Projects</a></li>
                     </ul>
                 </div>
             </div>
