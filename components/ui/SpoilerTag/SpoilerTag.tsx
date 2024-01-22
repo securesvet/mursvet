@@ -2,6 +2,7 @@
 
 import React, {memo, useEffect, useRef, useState} from 'react';
 import Dots from "@/components/ui/SpoilerTag/Dots";
+import Canvas from "@/components/ui/SpoilerTag/CanvasDots";
 
 interface ISpoiler {
     children?: React.ReactNode;
@@ -57,12 +58,12 @@ const SpoilerTag = ({children, hint = false}: ISpoiler) => {
             <div className="relative" onClick={() => {
                 setSpoilerOpacity(true);
             }}>
-                <Dots key={dotsKey} width={dotsDimensions.width} height={dotsDimensions.height}>
+                <Canvas key={dotsKey} width={dotsDimensions.width} height={dotsDimensions.height} opacity={spoilerOpacity}>
                     <div ref={h1Ref}
                          className={`${(spoilerOpacity) ? ("opacity-100") : ("hover:cursor-pointer opacity-0")} transition-opacity duration-500 whitespace-nowrap`}>
                         {children}
                     </div>
-                </Dots>
+                </Canvas>
             </div>
             {(hint) ?
                 <h1 className={`text-sm md:text-lg lg:text-xl font-normal transition-opacity ${(spoilerOpacity) ? ("opacity-0") : ("opacity-100")} duration-1000`}>(click

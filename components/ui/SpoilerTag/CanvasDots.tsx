@@ -10,7 +10,7 @@ interface IDots {
     children?: React.ReactNode;
 }
 
-const Canvas = ({width, height, children, density = ~~(width * height / 450 + 50), opacity}: IDots) => {
+const CanvasDots = ({width, height, children, density = ~~(width * height / 450 + 50), opacity}: IDots) => {
     const canvas = useRef<HTMLCanvasElement>();
     let circles: { x: number, y: number, dx: number, dy: number, radius: number }[] = [];
 
@@ -71,4 +71,4 @@ const Canvas = ({width, height, children, density = ~~(width * height / 450 + 50
     );
 };
 
-export default memo(Canvas);
+export default memo(CanvasDots);
