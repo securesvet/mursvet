@@ -5,6 +5,7 @@ import SpoilerTag from "@/components/ui/SpoilerTag/SpoilerTag";
 import Image from 'next/image'
 import ProjectCard from "@/components/ui/ProjectCard";
 import ScrolledDownAchievement from "@/components/ui/Achievements/ScrolledDownAchievement";
+import Canvas from "@/components/ui/SpoilerTag/CanvasDots";
 
 export default function Home() {
 

@@ -67,19 +67,21 @@ const Dots = ({width, height, children, density = ~~(width * height / 450 + 50)}
         <div onClick={() => {
             setDotPositions([]);
         }}>
-            <div>
-                {children}
-            </div>
             {dotPositions.map((el, index) => {
                 // This one is blur and width optimizations mostly for mobiles
                 const random = Math.random();
                 const currentWidth = ~~(random * 5 + 2);
                 const currentBlur = ~~( 2.5 / currentWidth);
-                return (<div key={`${index}`}
-                             className={`${styles.dot} z-[100]`}
-                             style={{top: el.top, left: el.left, width: `${currentWidth}px`, filter: `blur(${currentBlur}px)`}}>
-                </div>)
+                return (
+                    <div key={`${index}`}
+                         className={`${styles.dot} z-[100]`}
+                         style={{top: el.top, left: el.left, width: `${currentWidth}px`, filter: `blur(${currentBlur}px)`}}>
+                    </div>)
             })}
+            <div>
+                {children}
+            </div>
+
 
         </div>
     );
