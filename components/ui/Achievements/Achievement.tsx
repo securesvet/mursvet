@@ -13,7 +13,7 @@ interface IAchievement {
 
 const Achievement = ({title = "Achievement unlocked!", description, onShow, duration=6000}: IAchievement) => {
     const [showAchievement, setShowAchievement] = useState(false);
-    let wasAchievementShown = useRef(false);
+    const wasAchievementShown = useRef(false);
     useEffect(() => {
         const handleShow = () => {
             if (
