@@ -44,10 +44,11 @@ export default function Home() {
                             <Image src={'/images/airpods.gif'} alt={'ava'} width={500} height={500} className={"rounded-[inherit]"}/>
                         </ProjectCard>
                         {/*<ProjectCard title={'Perlin noise'} description={'hello'}/>*/}
-                        <ScrolledDownAchievement/>
                     </div>
                 </div>
             </section>
+            <ScrolledDownAchievement/>
+
         </main>
     )
 }
