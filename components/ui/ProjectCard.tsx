@@ -9,7 +9,7 @@ interface IProjectCard {
     children?: React.ReactNode;
     link?: string;
     isDeveloping?: boolean;
-    triggerOnShowPositon?: number;
+    triggerOnShowPosition?: number;
 }
 
 const ProjectCard = ({
@@ -18,7 +18,7 @@ const ProjectCard = ({
                          children,
                          link = '',
                          isDeveloping = false,
-                         triggerOnShowPositon = 0
+                         triggerOnShowPosition = 0
                      }: IProjectCard) => {
     const {ref: myRef, inView: cardIsVisible} = useInView();
 
@@ -45,7 +45,7 @@ const ProjectCard = ({
                     <p className="text-lg text-[#aaa]">{description}</p>
                 </div>
                 {/* When this div is visible */}
-                <div ref={myRef} className={`absolute top-[${triggerOnShowPositon}px]`}></div>
+                <div ref={myRef} className={`absolute top-[${triggerOnShowPosition}px]`}></div>
             </div>
         </a>
     );
