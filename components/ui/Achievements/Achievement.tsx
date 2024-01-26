@@ -3,15 +3,17 @@
 import React, {useState, useEffect, useRef} from 'react';
 import styles from '../../css/Achievement.module.css';
 
-interface IAchievement {
+export type AchievementType = {
+    onShow: () => boolean;
     title?: string;
     description?: string;
-    onShow: () => boolean;
+    imageSource?: string;
     // duration of achievement in ms
     duration?: number;
 }
 
-const Achievement = ({title = "Achievement unlocked!", description, onShow, duration=6000}: IAchievement) => {
+
+const Achievement = ({title = "Achievement unlocked!", description, onShow, duration = 6000, imageSource}: AchievementType) => {
     const [showAchievement, setShowAchievement] = useState(false);
     const wasAchievementShown = useRef(false);
     useEffect(() => {
@@ -42,7 +44,7 @@ const Achievement = ({title = "Achievement unlocked!", description, onShow, dura
             >
                 <div className={styles['achievement-icon']}>
                     <img
-                        src="https://steamuserimages-a.akamaihd.net/ugc/576736399930252495/C071E065DFBE4DDD1F82AE7B9FE5FC979BED7FFD/"
+                        src={imageSource}
                         alt="Achievement image"
                     />
                 </div>

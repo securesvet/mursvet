@@ -40,7 +40,7 @@ export default function Home() {
                         className="grid place-items-center text-left gap-y-10">
                         <ProjectCard title={'Airpods Application'}
                                      description={'App for airpods animation when connected'}
-                                     link={'https://github.com/securesvet/aircon'} isDeveloping={true}>
+                                     link={'https://github.com/securesvet/aircon'} isDeveloping={true} triggerOnShowPosition={50}>
                             <Image src={'/images/airpods.gif'} alt={'ava'} width={500} height={500}
                                    className={"rounded-[inherit]"}/>
                         </ProjectCard>
@@ -48,7 +48,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <ScrolledDownAchievement/>
+            <ScrolledDownAchievement description={"You've scrolled to the bottom!"}/>
 
         </main>
     )
