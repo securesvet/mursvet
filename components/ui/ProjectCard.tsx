@@ -45,7 +45,7 @@ const ProjectCard = ({
                     <p className="text-lg text-[#aaa]">{description}</p>
                 </div>
                 {/* When this div is visible */}
-                <div ref={myRef} className={`absolute top-[${triggerOnShowPosition}px]`}></div>
+                <div ref={myRef} className={`absolute left-1/2 top-[${100-triggerOnShowPosition}%]`}></div>
             </div>
         </a>
     );
