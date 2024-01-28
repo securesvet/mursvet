@@ -17,7 +17,7 @@ export default function BlobImage({href, ...props}: IBlobImage) {
                 clipPath="url(#shape)"
                 href={href}
                 preserveAspectRatio="none"
-                style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                style={{objectFit: 'cover', width: '100%', height: '100%'}}
             >
             </image>
             <clipPath id="shape">
