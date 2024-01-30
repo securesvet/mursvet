@@ -37,15 +37,15 @@ const ProjectCard = ({
 
                 <div className="absolute text-3xl top-[70%] left-[2%]">
                     {
-                        (isDeveloping) ? (
+                        (isDeveloping) && (
                             <p className="text-base text-[#aaa] absolute -top-[20%]">Under development...</p>
-                        ) : ('')
+                        )
                     }
                     <h1 className="font-bold">{title}</h1>
                     <p className="text-lg text-[#aaa]">{description}</p>
                 </div>
                 {/* When this div is visible */}
-                <div ref={myRef} className={`absolute left-1/2 top-[calc(100%   -${percentageOnShow})%]`}></div>
+                <div ref={myRef} className={`absolute left-1/2`} style={{top: `${100-percentageOnShow}%`}}></div>
             </div>
         </a>
     );
