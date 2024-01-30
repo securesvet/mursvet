@@ -13,7 +13,13 @@ export type AchievementType = {
 }
 
 
-const Achievement = ({title = "Achievement unlocked!", description, onShow, duration = 6000, imageSource}: AchievementType) => {
+const Achievement = ({
+                         title = "Achievement unlocked!",
+                         description,
+                         onShow,
+                         duration = 6000,
+                         imageSource
+                     }: AchievementType) => {
     const [showAchievement, setShowAchievement] = useState(false);
     const wasAchievementShown = useRef(false);
     useEffect(() => {
