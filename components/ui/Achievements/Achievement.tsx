@@ -29,11 +29,7 @@ const Achievement = ({title = "Achievement unlocked!", description, onShow, dura
             }
         };
 
-        window.addEventListener('scroll', handleShow);
 
-        return () => {
-            window.removeEventListener('scroll', handleShow);
-        };
     }, []);
 
     return (
