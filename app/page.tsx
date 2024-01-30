@@ -5,7 +5,6 @@ import SpoilerTag from "@/components/ui/SpoilerTag/SpoilerTag";
 import Image from 'next/image'
 import ProjectCard from "@/components/ui/ProjectCard";
 import ScrolledDownAchievement from "@/components/ui/Achievements/ScrolledDownAchievement";
-import Canvas from "@/components/ui/SpoilerTag/CanvasDots";
 
 export default function Home() {
 
@@ -25,9 +24,6 @@ export default function Home() {
                             className="hover:opacity-85 hover:cursor-pointer"/></a>
                     </div>
                 </div>
-                {/*<div className="grid place-items-center min-h-[100vh] min-w-full">*/}
-                {/*    <h1 className="text-9xl">Hello</h1>*/}
-                {/*</div>*/}
             </div>
             <section id="projects">
                 <div
@@ -35,7 +31,6 @@ export default function Home() {
                     <h1 className="mb-10">
                         Projects of mine
                     </h1>
-                    {/*min-h-full xl:grid-cols-2 xl:grid-rows-2 gap-y-10 text-start font-normal lg:grid-rows-3 lg:grid-cols-2*/}
                     <div
                         className="grid place-items-center text-left gap-y-10">
                         <ProjectCard title={'Airpods Application'}
