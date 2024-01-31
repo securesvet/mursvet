@@ -11,7 +11,7 @@ export default function Home() {
 
     return (
         <main
-            className="flex min-h-screen flex-col items-center justify-between pt-0 mt-[var(--global-nav-collective-height)]">
+            className="flex min-h-screen flex-col items-center justify-between pt-0">
             <div className="grid place-items-center h-[calc(100vh-var(--global-nav-collective-height))] text-primary">
                 <div
                     className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-center font-bold text-nowrap">

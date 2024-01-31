@@ -25,7 +25,7 @@ export default function RootLayout({
         <Head>
             <link rel="icon" href="/app/icon.png" type="image/x-icon" sizes="32x32"/>
         </Head>
-        <body className={inter.className}>
+        <body className={`${inter.className} mt-[var(--global-nav-collective-height)]`}>
         <Header/>
         {children}
         <Footer/>
