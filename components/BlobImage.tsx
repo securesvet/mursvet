@@ -1,9 +1,9 @@
 import React, {ReactNode} from 'react';
 
-interface IBlobImage {
+type IBlobImage = {
     href: string;
-    width?: string;
-    height?: string;
+    width?: string | number;
+    height?: string | number;
     props?: ReactNode;
 }
 
