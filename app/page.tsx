@@ -6,6 +6,7 @@ import Image from 'next/image'
 import ProjectCard from "@/components/ui/ProjectCard";
 import ScrolledDownAchievement from "@/components/ui/Achievements/ScrolledDownAchievement";
 
+
 export default function Home() {
 
     return (
@@ -19,11 +20,12 @@ export default function Home() {
                     <SpoilerTag hint={true}>
                         <h1>Sviatoslav Murzin</h1>
                     </SpoilerTag>
-                    <div className="grid place-items-center">
+                    <div className="grid place-items-center grid-rows-1">
                         <a href="https://github.com/securesvet"><FaGithubAlt
                             className="hover:opacity-85 hover:cursor-pointer"/></a>
                     </div>
                 </div>
+
             </div>
             <section id="projects">
                 <div

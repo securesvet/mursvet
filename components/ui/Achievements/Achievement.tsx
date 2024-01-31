@@ -1,7 +1,7 @@
 'use client';
 
-import React, {useState, useEffect, useRef} from 'react';
-import styles from '../../css/Achievement.module.css';
+import React, {useState, useRef, useEffect} from 'react';
+import styles from '@/components/css/Achievement.module.css';
 
 export type AchievementType = {
     onShow: () => boolean;
@@ -22,21 +22,18 @@ const Achievement = ({
                      }: AchievementType) => {
     const [showAchievement, setShowAchievement] = useState(false);
     const wasAchievementShown = useRef(false);
-    useEffect(() => {
-        const handleShow = () => {
-            if (
-                onShow() && !wasAchievementShown.current
-            ) {
-                setShowAchievement(true);
-                wasAchievementShown.current = true;
-                setTimeout(() => {
-                    setShowAchievement(false);
-                }, duration); // 6 seconds
-            }
-        };
 
-
-    }, []);
+    const handleShow = () => {
+        if (
+            onShow() && !wasAchievementShown.current
+        ) {
+            setShowAchievement(true);
+            wasAchievementShown.current = true;
+            setTimeout(() => {
+                setShowAchievement(false);
+            }, duration); // 6 seconds
+        }
+    };
 
     return (
         <div className="flex">
