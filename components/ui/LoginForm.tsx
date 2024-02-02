@@ -23,7 +23,7 @@ const formSchema = z.object({
 })
 
 export function ProfileForm() {
-    // implement obSubmit finction
+    // implement onSubmit function
 
     return (
         <Form {...form}>
