@@ -5,6 +5,8 @@ import SpoilerTag from "@/components/ui/SpoilerTag/SpoilerTag";
 import Image from 'next/image'
 import ProjectCard from "@/components/ui/ProjectCard";
 import ScrolledDownAchievement from "@/components/ui/Achievements/ScrolledDownAchievement";
+import {SparklesCore} from "@/components/ui/SparklesCore";
+import TelegramSpoilerTag from "@/components/ui/SpoilerTag/TelegramSpoilerTag";
 
 
 export default function Home() {
@@ -17,9 +19,9 @@ export default function Home() {
                     className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-center font-bold text-nowrap">
                     <GradientText>Hello</GradientText>
                     <h1>My name is</h1>
-                    <SpoilerTag hint={true}>
+                    <TelegramSpoilerTag>
                         <h1>Sviatoslav Murzin</h1>
-                    </SpoilerTag>
+                    </TelegramSpoilerTag>
                     <div className="grid place-items-center grid-rows-1">
                         <a href="https://github.com/securesvet"><FaGithubAlt
                             className="hover:opacity-85 hover:cursor-pointer"/></a>

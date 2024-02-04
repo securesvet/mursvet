@@ -10,7 +10,7 @@ interface IDots {
     children?: React.ReactNode;
 }
 
-const CanvasDots = ({width, height, children, density = ~~(width * height / 450 + 50), opacity}: IDots) => {
+const CanvasDots = ({width, height, children, density = ~~(width * height / 1000), opacity}: IDots) => {
     const canvas = useRef<HTMLCanvasElement>(null);
     let circles: { x: number, y: number, dx: number, dy: number, radius: number }[] = [];
 
