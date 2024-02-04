@@ -1,9 +1,13 @@
 import React from 'react';
 import styles from '@/components/css/GradientText.module.css'
 
-const GradientText = ({children, className, ...props}: React.HTMLAttributes<HTMLParagraphElement>) => {
+type GradientTextType = React.HTMLAttributes<HTMLParagraphElement> & {
+    animate?: boolean,
+}
+
+const GradientText = ({children, className, animate=true, ...props}: GradientTextType) => {
     return (
-        <p className={`${styles.magic} ${className}`} {...props}>
+        <p className={`${styles.magic} ${(animate) ? styles.animated : ('')} ${className}`} {...props}>
             {children}
         </p>
     );
