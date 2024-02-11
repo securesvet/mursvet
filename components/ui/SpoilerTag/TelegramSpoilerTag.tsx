@@ -22,10 +22,10 @@ const TelegramSpoilerTag = ({children, ...props}: TelegramSpoilerTag) => {
                 isSpoilerHidden ?
                     <SparklesCore
                         className={`w-full h-full absolute`}
-                        minSize={1}
-                        maxSize={1.4}
-                        speed={1}
-                        particleDensity={isMd ? (200) : (1000)}
+                        minSize={2}
+                        maxSize={3}
+                        speed={2}
+                        particleDensity={150}
                         {...props}
                     />
                     : ('')
