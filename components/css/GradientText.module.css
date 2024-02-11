@@ -1,5 +1,4 @@
 .magic {
-    animation: background-pan 3s linear infinite;
     background: linear-gradient(
             to right,
             var(--purple),
@@ -13,6 +12,10 @@
     white-space: nowrap;
     padding-bottom: 1em;
     margin-bottom: -1em;
+}
+
+.animated {
+    animation: background-pan 5s linear infinite;
 }
 
 @keyframes background-pan {
