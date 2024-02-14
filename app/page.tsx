@@ -3,9 +3,8 @@ import GradientText from "@/components/ui/GradientText";
 import {FaGithubAlt} from "react-icons/fa";
 import Image from 'next/image'
 import ProjectCard from "@/components/ui/ProjectCard";
-import ScrolledDownAchievement from "@/components/ui/Achievements/ScrolledDownAchievement";
-import TelegramSpoilerTag from "@/components/ui/SpoilerTag/TelegramSpoilerTag";
 import {BrowserView} from 'react-device-detect';
+import SpoilerTag from "@/components/ui/SpoilerTag/SpoilerTag";
 
 
 export default function Home() {
@@ -23,9 +22,9 @@ export default function Home() {
 
                     <h1>My name is</h1>
                     <BrowserView>
-                        <TelegramSpoilerTag>
+                        <SpoilerTag>
                             <h1>Sviatoslav Murzin</h1>
-                        </TelegramSpoilerTag>
+                        </SpoilerTag>
                     </BrowserView>
 
                     <div className="grid place-items-center grid-rows-1">
