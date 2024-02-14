@@ -3,9 +3,7 @@ import GradientText from "@/components/ui/GradientText";
 import {FaGithubAlt} from "react-icons/fa";
 import Image from 'next/image'
 import ProjectCard from "@/components/ui/ProjectCard";
-import ScrolledDownAchievement from "@/components/ui/Achievements/ScrolledDownAchievement";
-import TelegramSpoilerTag from "@/components/ui/SpoilerTag/TelegramSpoilerTag";
-import {BrowserView, MobileView} from 'react-device-detect';
+import {BrowserView} from 'react-device-detect';
 import SpoilerTag from "@/components/ui/SpoilerTag/SpoilerTag";
 
 
@@ -15,7 +13,7 @@ export default function Home() {
         <main
             className="flex min-h-screen flex-col items-center justify-between pt-0">
 
-                <div className="grid place-items-center h-[calc(100vh-var(--global-nav-collective-height))] text-primary">
+            <div className="grid place-items-center h-[calc(100vh-var(--global-nav-collective-height))] text-primary">
 
                 <div
                     className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-center font-bold text-nowrap">
@@ -24,9 +22,9 @@ export default function Home() {
 
                     <h1>My name is</h1>
                     <BrowserView>
-                    <TelegramSpoilerTag>
-                        <h1>Sviatoslav Murzin</h1>
-                    </TelegramSpoilerTag>
+                        <SpoilerTag>
+                            <h1>Sviatoslav Murzin</h1>
+                        </SpoilerTag>
                     </BrowserView>
 
                     <div className="grid place-items-center grid-rows-1">
@@ -56,8 +54,6 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <ScrolledDownAchievement description={"You've scrolled to the bottom!"}/>
-
         </main>
     )
 }
