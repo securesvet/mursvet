@@ -55,8 +55,6 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <ScrolledDownAchievement description={"You've scrolled to the bottom!"}/>
-
         </main>
     )
 }
