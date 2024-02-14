@@ -5,8 +5,7 @@ import Image from 'next/image'
 import ProjectCard from "@/components/ui/ProjectCard";
 import ScrolledDownAchievement from "@/components/ui/Achievements/ScrolledDownAchievement";
 import TelegramSpoilerTag from "@/components/ui/SpoilerTag/TelegramSpoilerTag";
-import {BrowserView, MobileView} from 'react-device-detect';
-import SpoilerTag from "@/components/ui/SpoilerTag/SpoilerTag";
+import {BrowserView} from 'react-device-detect';
 
 
 export default function Home() {
@@ -15,7 +14,7 @@ export default function Home() {
         <main
             className="flex min-h-screen flex-col items-center justify-between pt-0">
 
-                <div className="grid place-items-center h-[calc(100vh-var(--global-nav-collective-height))] text-primary">
+            <div className="grid place-items-center h-[calc(100vh-var(--global-nav-collective-height))] text-primary">
 
                 <div
                     className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-center font-bold text-nowrap">
@@ -24,9 +23,9 @@ export default function Home() {
 
                     <h1>My name is</h1>
                     <BrowserView>
-                    <TelegramSpoilerTag>
-                        <h1>Sviatoslav Murzin</h1>
-                    </TelegramSpoilerTag>
+                        <TelegramSpoilerTag>
+                            <h1>Sviatoslav Murzin</h1>
+                        </TelegramSpoilerTag>
                     </BrowserView>
 
                     <div className="grid place-items-center grid-rows-1">
