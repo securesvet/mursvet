@@ -3,7 +3,6 @@ import GradientText from "@/components/ui/GradientText";
 import {FaGithubAlt} from "react-icons/fa";
 import Image from 'next/image'
 import ProjectCard from "@/components/ui/ProjectCard";
-import {BrowserView} from 'react-device-detect';
 import SpoilerTag from "@/components/ui/SpoilerTag/SpoilerTag";
 
 
@@ -21,11 +20,9 @@ export default function Home() {
                     <GradientText>Hello</GradientText>
 
                     <h1>My name is</h1>
-                    <BrowserView>
-                        <SpoilerTag>
-                            <h1>Sviatoslav Murzin</h1>
-                        </SpoilerTag>
-                    </BrowserView>
+                    <SpoilerTag>
+                        <h1>Sviatoslav Murzin</h1>
+                    </SpoilerTag>
 
                     <div className="grid place-items-center grid-rows-1">
                         <a href="https://github.com/securesvet"><FaGithubAlt
