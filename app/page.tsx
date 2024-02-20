@@ -1,4 +1,6 @@
-import React from "react";
+'use client';
+
+import React, {useEffect, useRef} from "react";
 import GradientText from "@/components/ui/GradientText";
 import {FaGithubAlt} from "react-icons/fa";
 import Image from 'next/image'
@@ -7,7 +9,6 @@ import SpoilerTag from "@/components/ui/SpoilerTag/SpoilerTag";
 
 
 export default function Home() {
-
     return (
         <main
             className="flex min-h-screen flex-col items-center justify-between pt-0">
@@ -18,7 +19,6 @@ export default function Home() {
                     className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-center font-bold text-nowrap">
 
                     <GradientText>Hello</GradientText>
-
                     <h1>My name is</h1>
                     <SpoilerTag>
                         <h1>Sviatoslav Murzin</h1>

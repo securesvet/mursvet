@@ -1,6 +1,7 @@
 'use client';
 
 import React, {memo, useEffect, useRef} from 'react';
+import {getRandomInt, getRandomArbitrary} from "@/lib/utils";
 
 interface IDots {
     width: number;
@@ -9,6 +10,8 @@ interface IDots {
     density?: number;
     children?: React.ReactNode;
     velocity?: number;
+    minSize?: number;
+    maxSize?: number;
 }
 
 const CanvasDots = ({
@@ -17,6 +20,8 @@ const CanvasDots = ({
                         children,
                         density = ~~(width * height / 1000 + 50),
                         opacity,
+                        minSize=1.4,
+                        maxSize=2.0,
                         velocity = 0.5
                     }: IDots) => {
     const canvas = useRef<HTMLCanvasElement>(null);
@@ -25,14 +30,17 @@ const CanvasDots = ({
         x: number, y: number, dx: number, dy: number, radius: number, phi: number
     }[] = [];
 
+
+
     const createCircles = (amount: number = 10) => {
         for (let i = 0; i < amount; i++) {
+            const radius = Number(getRandomArbitrary(minSize, maxSize));
             circles.push({
-                x: Math.random() * (width - 10) + 10,
-                y: Math.random() * (height - 10) + 10,
+                x: getRandomInt(radius, width - 1) + 1,
+                y: getRandomInt(radius, height - 1) + 1,
                 dx: velocity * (Math.random() - 0.5),
                 dy: velocity * (Math.random() - 0.5),
-                radius: Number((Math.random() + 2).toFixed(2)),
+                radius: radius,
                 opacity: ~~Math.random() * 100,
                 phi: Math.random() * (2 * Math.PI),
             });
@@ -64,10 +72,9 @@ const CanvasDots = ({
             if (!canvas.current) return;
             ctx.beginPath();
             ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
-            ctx.fillStyle = '#fff';
+            ctx.fillStyle = `rgb(255 255 255 / ${circle.opacity}%)`;
             circle.phi = 0.005 + circle.phi % (2 * Math.PI);
             circle.opacity = 50 * (Math.sin(circle.phi) + 1);
-            ctx.filter = `opacity(${circle.opacity}%)`
             ctx.fill();
         });
         requestAnimationFrame(draw_2DCanvas)
