@@ -1,25 +1,24 @@
 'use client';
 
 import React, {memo, useEffect, useRef, useState} from 'react';
-import Dots from "@/components/ui/SpoilerTag/Dots";
 import Canvas from "@/components/ui/SpoilerTag/CanvasDots";
 
-interface ISpoiler {
+type SpoilerType = {
     children?: React.ReactNode;
     hint?: Boolean;
 }
 
-const SpoilerTag = ({children, hint = false}: ISpoiler) => {
-    const [spoilerOpacity, setSpoilerOpacity] = useState(false);
+const SpoilerTag = ({children, hint = false}: SpoilerType) => {
+    const [isSpoilerVisible, setSpoilerIsVisible] = useState(false);
     const [dotsDimensions, setDotsDimensions] = useState({width: 0, height: 0});
-    const h1Ref = useRef<HTMLDivElement>(null);
+    const divRefElement = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const handleResize = () => {
-            if (spoilerOpacity) return;
+            if (isSpoilerVisible) return;
 
-            if (h1Ref.current) {
-                const {width, height} = h1Ref.current.getBoundingClientRect();
+            if (divRefElement.current) {
+                const {width, height} = divRefElement.current.getBoundingClientRect();
                 setDotsDimensions({width, height});
             }
         };
@@ -34,12 +33,12 @@ const SpoilerTag = ({children, hint = false}: ISpoiler) => {
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, [spoilerOpacity]);
+    }, [isSpoilerVisible]);
 
     // Force re-render when window is resized
     const [windowWidth, setWindowWidth] = useState((typeof window !== "undefined") ? window.innerWidth : 0);
     useEffect(() => {
-        if (spoilerOpacity) return;
+        if (isSpoilerVisible) return;
         const handleWindowResize = () => {
             setWindowWidth(window.innerWidth);
         };
@@ -49,25 +48,25 @@ const SpoilerTag = ({children, hint = false}: ISpoiler) => {
         return () => {
             window.removeEventListener('resize', handleWindowResize);
         };
-    }, [spoilerOpacity]);
+    }, [isSpoilerVisible]);
 
     const dotsKey = `${dotsDimensions.width}-${dotsDimensions.height}`;
 
     return (
         <>
             <div className="relative" onClick={() => {
-                setSpoilerOpacity(true);
+                setSpoilerIsVisible(true);
             }}>
-                <Canvas key={dotsKey} width={dotsDimensions.width} height={dotsDimensions.height} opacity={spoilerOpacity}>
-                    <div ref={h1Ref}
-                         className={`${(spoilerOpacity) ? ("opacity-100") : ("hover:cursor-pointer opacity-0")} transition-opacity duration-500 whitespace-nowrap`}>
+                <Canvas key={dotsKey} width={dotsDimensions.width} height={dotsDimensions.height} isSpoilerVisible={isSpoilerVisible}>
+                    <div ref={divRefElement}
+                         className={`${(isSpoilerVisible) ? ("opacity-100") : ("hover:cursor-pointer opacity-0")} transition-opacity duration-500 whitespace-nowrap`}>
                         {children}
                     </div>
                 </Canvas>
             </div>
-            {(hint) ?
-                <h1 className={`text-sm md:text-lg lg:text-xl font-normal transition-opacity ${(spoilerOpacity) ? ("opacity-0") : ("opacity-100")} duration-1000`}>(click
-                    here)</h1> : ""}
+            {(hint) &&
+                <h1 className={`text-sm md:text-lg lg:text-xl font-normal transition-opacity ${(isSpoilerVisible) ? ("opacity-0") : ("opacity-100")} duration-1000`}>(click
+                    here)</h1>}
         </>
     );
 };
