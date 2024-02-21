@@ -1,6 +1,6 @@
 'use client';
 
-import React, {memo, useEffect, useRef} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {getRandomInt, getRandomArbitrary} from "@/lib/utils";
 
 interface IDots {
