@@ -37,15 +37,15 @@ const CanvasDots = ({
             // dx and dy is simply velocity
             // opacity is considered to be random for every circle
             // phi angle is for changing opacity with trigonometric functions
-            // radius is put into new variable in order to improve code readability
-            const radius = Number(getRandomArbitrary(minSize, maxSize));
-
+            // circleRadius is put into new variable in order to improve code readability
+            const circleRadius = getRandomArbitrary(minSize, maxSize);
+            const circleDiameter = 2 * circleRadius;
             circles.push({
-                x: getRandomInt(radius, width - 1) + 1,
-                y: getRandomInt(radius, height - 1) + 1,
+                x: getRandomInt(circleDiameter, width - circleDiameter),
+                y: getRandomInt(circleDiameter, height - circleDiameter),
                 dx: velocity * (Math.random() - 0.5),
                 dy: velocity * (Math.random() - 0.5),
-                radius: radius,
+                radius: circleRadius,
                 opacity: ~~Math.random() * 100,
                 phi: Math.random() * (2 * Math.PI),
             });
