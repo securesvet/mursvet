@@ -1,6 +1,6 @@
 'use client';
 
-import React, {useEffect, useRef} from "react";
+import React from "react";
 import GradientText from "@/components/ui/GradientText";
 import {FaGithubAlt} from "react-icons/fa";
 import Image from 'next/image'
@@ -32,14 +32,20 @@ export default function Home() {
 
             </div>
             <section id="projects">
+                {/*<BentoGrid>*/}
+                {/*    <BentoGridItem title={"Hello"} header={"Project"} icon={ <Image src={'/images/airpods.gif'} alt={'ava'} width={200} height={200}/>} description={"My project"}/>*/}
+                {/*    <BentoGridItem title={"Hello"} description={"My project"}/>*/}
+                {/*    <BentoGridItem title={"Hello"} description={"My project"}/>*/}
+                {/*    <BentoGridItem title={"Hello"} description={"My project"}/>*/}
 
+                {/*</BentoGrid>*/}
                 <div
                     className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-primary font-bold text-center">
                     <h1 className="mb-10">
                         Projects of mine
                     </h1>
                     <div
-                        className="grid place-items-center text-left gap-y-10">
+                        className="grid place-items-center text-left gap-y-10 grid-cols-1">
                         <ProjectCard title={'Airpods Application'}
                                      description={'App for airpods animation when connected'}
                                      link={'https://github.com/securesvet/aircon'} isDeveloping={true}
@@ -47,7 +53,6 @@ export default function Home() {
                             <Image src={'/images/airpods.gif'} alt={'ava'} width={500} height={500}
                                    className={"rounded-[inherit]"}/>
                         </ProjectCard>
-
                     </div>
                 </div>
             </section>

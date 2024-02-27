@@ -52,11 +52,14 @@ const CanvasDots = ({
         }
     };
 
+    const getCanvasContext = (currentCanvas: HTMLCanvasElement) => {
+        return (currentCanvas) ? currentCanvas.getContext("2d") : null;
+    }
 
     const draw_2DCanvas = () => {
         if (!canvas.current) return;
 
-        const ctx = canvas.current.getContext("2d");
+        const ctx = getCanvasContext(canvas.current);
         if (!ctx) return;
         const ratio = Math.ceil(window.devicePixelRatio);
         canvas.current.width = width * ratio;
@@ -87,7 +90,6 @@ const CanvasDots = ({
             circle.opacity = 50 * (Math.sin(circle.phi) + 1);
             ctx.fill();
         });
-
         requestAnimationFrame(draw_2DCanvas)
     };
 
