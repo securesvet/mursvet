@@ -25,7 +25,7 @@ const ProjectCard = ({
     return (
         <a href={link}>
             <div
-                className={`w-[20rem] h-[20rem] bg-[#242424] rounded-2xl ${(isDeveloping) ? ('hover:bg-[#222] hover:border-[#333]') : ('hover:bg-[#333] hover:border-[#444]')} cursor-pointer transition-all
+                className={`bg-[#242424] rounded-2xl ${(isDeveloping) ? ('hover:bg-[#222] hover:border-[#333]') : ('hover:bg-[#333] hover:border-[#444]')} cursor-pointer transition-all
                                         border-[1px] border-[#343434] hover:opacity-85 relative ${(cardIsVisible) ? ('translate-y-0 opacity-100') : ('opacity-0 transform translate-y-[20px]')}`}>
                 <div className="rounded-[inherit]">
                     <div
@@ -41,7 +41,7 @@ const ProjectCard = ({
                             <p className="text-base text-[#aaa] absolute -top-[20%]">Under development...</p>
                         )
                     }
-                    <h1 className="font-bold">{title}</h1>
+                    <h1 className="font-bold mt-1">{title}</h1>
                     <p className="text-lg text-[#aaa]">{description}</p>
                 </div>
                 {/* When this div is visible */}

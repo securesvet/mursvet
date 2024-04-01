@@ -80,6 +80,7 @@
     html {
         scroll-behavior: smooth;
         scroll-padding: var(--scroll-pading, 5rem);
+        overflow-x: hidden;
     }
 
     body {

@@ -6,6 +6,7 @@ import {FaGithubAlt} from "react-icons/fa";
 import Image from 'next/image'
 import ProjectCard from "@/components/ui/ProjectCard";
 import SpoilerTag from "@/components/ui/SpoilerTag/SpoilerTag";
+import CssGrid from "@/components/ui/CssGrid/CssGrid";
 
 
 export default function Home() {
@@ -31,29 +32,16 @@ export default function Home() {
                 </div>
 
             </div>
-            <section id="projects">
-                {/*<BentoGrid>*/}
-                {/*    <BentoGridItem title={"Hello"} header={"Project"} icon={ <Image src={'/images/airpods.gif'} alt={'ava'} width={200} height={200}/>} description={"My project"}/>*/}
-                {/*    <BentoGridItem title={"Hello"} description={"My project"}/>*/}
-                {/*    <BentoGridItem title={"Hello"} description={"My project"}/>*/}
-                {/*    <BentoGridItem title={"Hello"} description={"My project"}/>*/}
-
-                {/*</BentoGrid>*/}
+            <section id="projects" className="min-w-full">
                 <div
                     className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-primary font-bold text-center">
                     <h1 className="mb-10">
                         Projects of mine
                     </h1>
-                    <div
-                        className="grid place-items-center text-left gap-y-10 grid-cols-1">
-                        <ProjectCard title={'Airpods Application'}
-                                     description={'App for airpods animation when connected'}
-                                     link={'https://github.com/securesvet/aircon'} isDeveloping={true}
-                                     percentageOnShow={50}>
-                            <Image src={'/images/airpods.gif'} alt={'ava'} width={500} height={500}
-                                   className={"rounded-[inherit]"}/>
-                        </ProjectCard>
-                    </div>
+                    <div className="max-w-7xl mx-auto md:text-2xl xs:text-xl text-white">
+                            <CssGrid/>
+                        </div>
+
                 </div>
             </section>
         </main>
