@@ -1,0 +1,11 @@
+{
+    "data":
+    [
+    {"title": "Aircon", "value": "Fancy animation using electron", "bgImage": "giphy.gif", "link": "www.github.com/securesvet/aircon"}, 
+    {"title": "Mursvet", "value": "You already see it :)", "bgImage": "mads.jpg", "link": "www.github.com/securesvet/mursvet"},
+    {"title": "SvetUI", "value": "React Components Library", "link": "www.github.com/securesvet/svet-rsc"}, 
+    {"title": "Car Design", "value": "Car constructor made with Next.js", "bgImage": "car_design.jpg", "link": "www.github.com/securesvet/car-design-nextjs"},
+    {"title": "Other Projects", "value": "Are coming soon...", "link": "www.github.com/securesvet"},
+    {"title": "Name", "value": "Murzin Sviatoslav", "link": ""}
+    ]
+}
