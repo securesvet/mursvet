@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge';
 
 type BackgroundImageProps = {
     url?: string | undefined;
-    onClick?: fn;
+    onClick?: () => void;
 }
 
 const BackgroundImage = ({url, onClick}:BackgroundImageProps) => {

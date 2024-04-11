@@ -1,21 +1,15 @@
 'use client';
-
 import React from "react";
 import GradientText from "@/components/ui/GradientText";
 import {FaGithubAlt} from "react-icons/fa";
-import Image from 'next/image'
-import ProjectCard from "@/components/ui/ProjectCard";
 import SpoilerTag from "@/components/ui/SpoilerTag/SpoilerTag";
 import CssGrid from "@/components/ui/CssGrid/CssGrid";
-
 
 export default function Home() {
     return (
         <main
             className="flex min-h-screen flex-col items-center justify-between pt-0">
-
             <div className="grid place-items-center h-[calc(100vh-var(--global-nav-collective-height))] text-primary">
-
                 <div
                     className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-center font-bold text-nowrap">
 
@@ -38,7 +32,7 @@ export default function Home() {
                     <h1 className="mb-10">
                         Projects of mine
                     </h1>
-                    <div className="max-w-7xl mx-auto md:text-2xl xs:text-xl text-white">
+                    <div className="max-w-7xl mx-auto md:text-2xl xs:text-xl text-secondary">
                             <CssGrid/>
                         </div>
 
