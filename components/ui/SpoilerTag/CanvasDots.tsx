@@ -1,6 +1,6 @@
 'use client';
 
-import React, {memo, useEffect, useRef} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {getRandomInt, getRandomArbitrary} from "@/lib/utils";
 
 interface IDots {
@@ -37,26 +37,29 @@ const CanvasDots = ({
             // dx and dy is simply velocity
             // opacity is considered to be random for every circle
             // phi angle is for changing opacity with trigonometric functions
-            // radius is put into new variable in order to improve code readability
-            const radius = Number(getRandomArbitrary(minSize, maxSize));
-
+            // circleRadius is put into new variable in order to improve code readability
+            const circleRadius = getRandomArbitrary(minSize, maxSize);
+            const circleDiameter = 2 * circleRadius;
             circles.push({
-                x: getRandomInt(radius, width - 1) + 1,
-                y: getRandomInt(radius, height - 1) + 1,
+                x: getRandomInt(circleDiameter, width - circleDiameter),
+                y: getRandomInt(circleDiameter, height - circleDiameter),
                 dx: velocity * (Math.random() - 0.5),
                 dy: velocity * (Math.random() - 0.5),
-                radius: radius,
+                radius: circleRadius,
                 opacity: ~~Math.random() * 100,
                 phi: Math.random() * (2 * Math.PI),
             });
         }
     };
 
+    const getCanvasContext = (currentCanvas: HTMLCanvasElement) => {
+        return (currentCanvas) ? currentCanvas.getContext("2d") : null;
+    }
 
     const draw_2DCanvas = () => {
         if (!canvas.current) return;
 
-        const ctx = canvas.current.getContext("2d");
+        const ctx = getCanvasContext(canvas.current);
         if (!ctx) return;
         const ratio = Math.ceil(window.devicePixelRatio);
         canvas.current.width = width * ratio;
@@ -87,7 +90,6 @@ const CanvasDots = ({
             circle.opacity = 50 * (Math.sin(circle.phi) + 1);
             ctx.fill();
         });
-
         requestAnimationFrame(draw_2DCanvas)
     };
 

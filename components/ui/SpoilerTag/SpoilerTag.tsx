@@ -57,7 +57,8 @@ const SpoilerTag = ({children, hint = false}: SpoilerType) => {
             <div className="relative" onClick={() => {
                 setSpoilerIsVisible(true);
             }}>
-                <Canvas key={dotsKey} width={dotsDimensions.width} height={dotsDimensions.height} isSpoilerVisible={isSpoilerVisible}>
+                <Canvas key={dotsKey} width={dotsDimensions.width} height={dotsDimensions.height}
+                        isSpoilerVisible={isSpoilerVisible}>
                     <div ref={divRefElement}
                          className={`${(isSpoilerVisible) ? ("opacity-100") : ("hover:cursor-pointer opacity-0")} transition-opacity duration-500 whitespace-nowrap`}>
                         {children}

@@ -1,0 +1,10 @@
+{
+    "data":
+    [
+    {"title": "Aircon", "value": "UX enhance using Tauri", "bgImage": "airpods.png", "link": "https://www.github.com/securesvet/aircon"}, 
+    {"title": "Mursvet", "value": "You already see it :)", "bgImage": "football.jpg", "link": "https://www.github.com/securesvet/mursvet"},
+    {"title": "SvetUI",  "value": "React Components Library", "bgImage": "components.png", "link": "https://www.github.com/securesvet/svetui"}, 
+    {"title": "Car Design", "value": "Car constructor made with Next.js", "bgImage": "car_design.jpg", "link": "https://www.github.com/securesvet/car-design-nextjs"},
+    {"title": "Other Projects", "value": "Are coming soon...", "link": "https://www.github.com/securesvet"}
+    ]
+}
