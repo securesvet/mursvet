@@ -18,6 +18,7 @@ export default function Home() {
                         <h1>Sviatoslav Murzin</h1>
                     </SpoilerTag>
                     <div className="grid place-items-center grid-rows-1">
+
                         <a href="https://github.com/securesvet"><FaGithubAlt
                             className="hover:opacity-85 hover:cursor-pointer"/></a>
                     </div>
