@@ -27,7 +27,12 @@ export default function RootLayout({
         </Head>
         <body className={`${inter.className} mt-[var(--global-nav-collective-height)]`}>
         <Header/>
+        <div className='mt-[var(--global-nav-collective-height)]'>
+
+
         {children}
+        </div>
+        
         <Footer/>
         </body>
         </html>
