@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import {Switch} from "@/components/ui/switch";
 import {JetBrains_Mono} from "next/font/google";
 
 const jetBrainsMono = JetBrains_Mono({weight: "700", subsets: ['latin']})
