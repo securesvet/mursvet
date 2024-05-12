@@ -1,4 +1,4 @@
-'use client';
+
 import React from "react";
 import GradientText from "@/components/ui/GradientText";
 import {FaGithubAlt} from "react-icons/fa";
