@@ -23,12 +23,11 @@ const CssGrid = () => {
             <div key={i}
             onClick={() => router.push(item.link,)}
             className={twMerge(boxStyle, `${i === 3 ? 'md:col-span-2' : ''} ${i === 2 ? 'md:row-span-2' : ''} ${i === 4 ? 'md:col-span-3' : ''} relative`)}>
-                <div className="absolute z-10">
+                <BackgroundImage imageUrl={`${item.bgImage ? `/images/${item.bgImage}` : ''}`} />
+                <div className="absolute z-1">
                     <h2 className="text-xl text-gray-300 opacity-100">{item.title}</h2>
                     <p className="font-bold text-2xl opacity-100">{item.value}</p>
                 </div>
-                <BackgroundImage imageUrl={`${item.bgImage ? `/images/${item.bgImage}` : ''}`} />
-            
             </div>
         ))}
 
