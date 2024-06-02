@@ -30,7 +30,6 @@ const CssGrid = () => {
                 </div>
             </div>
         ))}
-
     </div>
     );
 }
