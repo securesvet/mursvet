@@ -4,9 +4,7 @@ import './globals.css'
 import React from "react";
 import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
-import {ThemeProvider} from "@/components/ui/ThemeProvider";
 import Head from "next/head";
-import Achievement from "@/components/ui/Achievements/Achievement";
 
 const inter = Inter({subsets: ['latin']})
 

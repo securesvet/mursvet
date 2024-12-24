@@ -1,7 +1,6 @@
 import React from "react";
-import { BentoGrid, BentoGridItem } from "./bento-grid";
+import { BentoGrid, BentoGridItem } from "./bento-grid.tsx";
 
- 
 export default function BentoGridDemo() {
   return (
     <BentoGrid className="max-w-4xl mx-auto">
@@ -18,7 +17,8 @@ export default function BentoGridDemo() {
   );
 }
 const Skeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
+  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100">
+  </div>
 );
 const items = [
   {
@@ -34,7 +34,9 @@ const items = [
   {
     title: "The Art of Design",
     description: "Discover the beauty of thoughtful and functional design.",
-    header: <img src="/images/avatar.jpg" width={300} className="rounded-xl"></img>,
+    header: (
+      <img src="/images/avatar.jpg" width={300} className="rounded-xl"></img>
+    ),
   },
   {
     title: "The Power of Communication",

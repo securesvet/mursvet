@@ -1,32 +1,32 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
       center: true,
       padding: "2rem",
       screens: {
-        'sm': '640px',
+        "sm": "640px",
         // => @media (min-width: 640px) { ... }
 
-        'md': '768px',
+        "md": "768px",
         // => @media (min-width: 768px) { ... }
 
-        'lg': '1024px',
+        "lg": "1024px",
         // => @media (min-width: 1024px) { ... }
 
-        'xl': '1280px',
+        "xl": "1280px",
         // => @media (min-width: 1280px) { ... }
 
-        '2xl': '1536px',
+        "2xl": "1536px",
         // => @media (min-width: 1536px) { ... }
       },
     },
@@ -74,11 +74,11 @@ const config = {
       keyframes: {
         spotlight: {
           "0%": {
-            opacity: '0',
+            opacity: "0",
             transform: "translate(-72%, -62%) scale(0.5)",
           },
           "100%": {
-            opacity: '1',
+            opacity: "1",
             transform: "translate(-50%,-40%) scale(1)",
           },
         },
@@ -99,6 +99,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;

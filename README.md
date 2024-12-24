@@ -1,6 +1,6 @@
 ## Portfolio website
 
-I decided to make my own portfolio website, that is probably it. 
+I decided to make my own portfolio website, that is probably it.
 
 I'm going to add a lot of interesting features in the closest future.
 
@@ -21,4 +21,5 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the
+result.
